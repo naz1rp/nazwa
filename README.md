@@ -1,4 +1,4 @@
-<!DOCTYPE
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
@@ -10,12 +10,16 @@
     <style>
         :root {
             --green: #2ecc71;
-            --dark-green: rgba(46, 204, 113, 0.1); 
             --dark: #050506;
+            --card-bg: rgba(255, 255, 255, 0.03);
             --card-text: #ffffff;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
 
         body {
             background: var(--dark);
@@ -24,28 +28,60 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            overflow-x: hidden;
         }
 
+        /* الخلفية الشفافة المعتمدة على لوغو السيرفر */
         .hero-bg {
             position: fixed;
             inset: 0;
             z-index: -1;
-            /* تقرأ من ملف logo.png المرفوع مباشرة على السيرفر لضمان ظهورها */
             background-image: linear-gradient(rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.95)), url('logo.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
 
-        .header { text-align: center; padding: 60px 20px 30px; }
-        .header img { width: 140px; height: 140px; border-radius: 50%; border: 4px solid var(--green); box-shadow: 0 0 20px rgba(46, 204, 113, 0.4); margin-bottom: 15px; object-fit: cover; }
-        .header h1 { font-size: 3.5rem; font-weight: 900; }
-        .header p { color: var(--green); letter-spacing: 3px; font-weight: bold; }
+        /* الهيدر اللوغو وكلمة قوانين */
+        .header { 
+            text-align: center; 
+            padding: 60px 20px 30px; 
+        }
+        
+        .header img { 
+            width: 140px; 
+            height: 140px; 
+            border-radius: 50%; 
+            border: 4px solid var(--green); 
+            box-shadow: 0 0 20px rgba(46, 204, 113, 0.4); 
+            margin-bottom: 15px; 
+            object-fit: cover; 
+        }
+        
+        .header h1 { 
+            font-size: 3.5rem; 
+            font-weight: 900; 
+            margin-bottom: 5px;
+        }
+        
+        .header p { 
+            color: var(--green); 
+            letter-spacing: 3px; 
+            font-weight: bold; 
+        }
 
-        .container { width: 90%; max-width: 1000px; margin: auto; flex: 1; padding-bottom: 60px; }
+        /* حاوية القوانين */
+        .container { 
+            width: 90%; 
+            max-width: 1000px; 
+            margin: auto; 
+            flex: 1; 
+            padding-bottom: 60px; 
+        }
 
+        /* تصميم القوائم المنسدلة بدقة وبخلفية شفافة */
         details { 
-            background: rgba(255, 255, 255, 0.03); 
+            background: var(--card-bg); 
             border: 1px solid rgba(46, 204, 113, 0.25); 
             border-radius: 12px; 
             margin-bottom: 15px; 
@@ -59,10 +95,21 @@
             box-shadow: 0 0 20px rgba(46, 204, 113, 0.15);
         }
 
-        summary { padding: 22px; cursor: pointer; font-size: 1.3rem; font-weight: bold; display: flex; justify-content: space-between; align-items: center; list-style: none; color: var(--card-text); }
+        summary { 
+            padding: 22px; 
+            cursor: pointer; 
+            font-size: 1.3rem; 
+            font-weight: bold; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            list-style: none; 
+            color: var(--card-text); 
+        }
+        
         summary::-webkit-details-marker { display: none; }
 
-        /* تصليح الأيقونات لمنع ظهور علامات الاستفهام */
+        /* أيقونات الزائد والناقص الصحيحة والمجربة */
         summary::after { 
             content: "\f067"; 
             font-family: "Font Awesome 6 Free"; 
@@ -70,11 +117,21 @@
             color: var(--green); 
             transition: 0.3s;
         }
-        details[open] summary::after { content: "\f068"; }
         
-        .content { padding: 25px; line-height: 1.9; background: rgba(0, 0, 0, 0.35); color: #eee; font-size: 1.05rem; border-top: 1px solid rgba(46, 204, 113, 0.15); }
+        details[open] summary::after { 
+            content: "\f068"; 
+        }
+        
+        .content { 
+            padding: 25px; 
+            line-height: 1.9; 
+            background: rgba(0, 0, 0, 0.4); 
+            color: #eee; 
+            font-size: 1.05rem; 
+            border-top: 1px solid rgba(46, 204, 113, 0.15); 
+        }
 
-        /* الفوتر المطور الصصحيح */
+        /* الفوتر المطور */
         footer {
             background: #0a0a0c;
             border-top: 4px solid var(--green);
@@ -95,8 +152,22 @@
             margin-bottom: 40px;
         }
 
-        .status-btn { display: inline-block; background: var(--green); color: #000; text-decoration: none; padding: 12px 30px; border-radius: 8px; font-weight: bold; margin-top: 15px; transition: 0.3s; }
-        .status-btn:hover { background: #27ae60; transform: translateY(-2px); }
+        .status-btn { 
+            display: inline-block; 
+            background: var(--green); 
+            color: #000; 
+            text-decoration: none; 
+            padding: 12px 30px; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            margin-top: 15px; 
+            transition: 0.3s; 
+        }
+        
+        .status-btn:hover { 
+            background: #27ae60; 
+            transform: translateY(-2px); 
+        }
 
         .footer-grid {
             display: grid;
@@ -107,11 +178,30 @@
             padding-bottom: 30px;
         }
 
-        .footer-box h3 { color: var(--green); margin-bottom: 20px; font-size: 1.3rem; border-right: 3px solid var(--green); padding-right: 10px; }
+        .footer-box h3 { 
+            color: var(--green); 
+            margin-bottom: 20px; 
+            font-size: 1.3rem; 
+            border-right: 3px solid var(--green); 
+            padding-right: 10px; 
+        }
+        
         .contact-links { list-style: none; }
         .contact-links li { margin-bottom: 12px; }
-        .contact-links a { color: #ccc; text-decoration: none; display: flex; align-items: center; gap: 12px; transition: 0.3s; }
-        .contact-links a:hover { color: var(--green); padding-right: 5px; }
+        
+        .contact-links a { 
+            color: #ccc; 
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            transition: 0.3s; 
+        }
+        
+        .contact-links a:hover { 
+            color: var(--green); 
+            padding-right: 5px; 
+        }
 
         .copyright {
             text-align: center;
@@ -121,7 +211,9 @@
             font-weight: 500;
         }
 
+        /* دعم الهواتف والشاشات الصغيرة */
         @media (max-width: 768px) {
+            .header h1 { font-size: 2.5rem; }
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
             .contact-links a { justify-content: center; }
             .footer-box h3 { border-right: none; border-bottom: 2px solid var(--green); display: inline-block; padding: 0 0 5px 0; }
@@ -139,6 +231,7 @@
     </div>
 
     <div class="container">
+        
         <details>
             <summary>قوانين عامة</summary>
             <div class="content">
@@ -204,38 +297,6 @@
         </details>
 
         <details>
-            <summary>قوانين الإساب الفنية أو الإسعاف</summary>
+            <summary>قوانين الإسعاف</summary>
             <div class="content">• علاج الجميع بدون تمييز والالتزام بالواقعية الطبية.</div>
-        </details>
-
-        <details>
-            <summary>قوانين المواطنين</summary>
-            <div class="content">• الالتزام بالقوانين العامة للمدينة واحترام الجهات الحكومية.</div>
-        </details>
-
-        <details>
-            <summary>قوانين الميكانيكي</summary>
-            <div class="content">• تصليح السيارات بشكل واقعي والالتزام بأسعار السيرفر المعتمدة.</div>
-        </details>
-    </div>
-
-    <footer>
-        <div class="footer-container">
-            <div class="online-box">
-                <h2>من متواجد حالياً؟</h2>
-                <a href="https://discord.com/widget?id=1273934372551524383&theme=dark" class="status-btn" target="_blank">عرض المتواجدين الآن</a>
-            </div>
-
-            <div class="footer-grid">
-                <div class="footer-box">
-                    <h3>روابط هامة</h3>
-                    <ul class="contact-links">
-                        <li><a href="#"><i class="fas fa-home"></i> الرئيسية</a></li>
-                        <li><a href="#"><i class="fas fa-gavel"></i> القوانين</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-box">
-                    <h3>تواصل معنا</h3>
-                    <ul class="contact-links">
-                        <l
+        </d

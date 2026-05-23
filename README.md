@@ -10,7 +10,7 @@
     <style>
         :root {
             --green: #2ecc71;
-            --dark-green: rgba(46, 204, 113, 0.1); /* تعديل للشفافية */
+            --dark-green: rgba(46, 204, 113, 0.1); 
             --dark: #050506;
             --card-text: #ffffff;
         }
@@ -30,21 +30,21 @@
             position: fixed;
             inset: 0;
             z-index: -1;
-            background-image: linear-gradient(rgba(5, 5, 5, 0.8), rgba(5, 5, 5, 0.9)),
-                url('https://cdn.discordapp.com/attachments/1463594306525724704/1500428814478610512/IMG_5109.png?ex=69f866b9&is=69f71539&hm=7e21bda0a3f767d54507020675fddce0af1195647386f898edf141522ab296b1&');
+            /* تم ربط الخلفية بالصورة المرفوعة مباشرة */
+            background-image: linear-gradient(rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.95)), url('logo.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
 
         .header { text-align: center; padding: 60px 20px 30px; }
-        .header img { width: 140px; height: 140px; border-radius: 50%; border: 4px solid var(--green); box-shadow: 0 0 20px rgba(46, 204, 113, 0.4); margin-bottom: 15px; }
+        /* تم تعديل الشعار ليقرأ من السيرفر */
+        .header img { width: 140px; height: 140px; border-radius: 50%; border: 4px solid var(--green); box-shadow: 0 0 20px rgba(46, 204, 113, 0.4); margin-bottom: 15px; object-fit: cover; }
         .header h1 { font-size: 3.5rem; font-weight: 900; }
         .header p { color: var(--green); letter-spacing: 3px; font-weight: bold; }
 
         .container { width: 90%; max-width: 1000px; margin: auto; flex: 1; padding-bottom: 40px; }
 
-        /* تعديل القوائم لتكون شفافة وأنيقة */
         details { 
             background: rgba(255, 255, 255, 0.03); 
             border: 1px solid rgba(46, 204, 113, 0.3); 
@@ -61,9 +61,8 @@
         }
 
         summary { padding: 20px; cursor: pointer; font-size: 1.2rem; font-weight: bold; display: flex; justify-content: space-between; align-items: center; list-style: none; color: var(--card-text); }
-        summary::-webkit-details-marker { display: none; } /* إخفاء سهم المتصفح الافتراضي */
+        summary::-webkit-details-marker { display: none; } 
         
-        /* إضافة وتعديل أيقونات الزائد والناقص */
         summary::after { 
             content: "\f067"; 
             font-family: "Font Awesome 6 Free"; 
@@ -83,7 +82,6 @@
             border-top: 1px solid rgba(46, 204, 113, 0.2);
         }
 
-        /* الفوتر */
         footer {
             background: rgba(10, 10, 12, 0.95);
             border-top: 3px solid var(--green);
@@ -155,7 +153,7 @@
     <div class="hero-bg"></div>
 
     <div class="header">
-        <img src="https://cdn.discordapp.com/attachments/1463594306525724704/1500428814478610512/IMG_5109.png?ex=69f866b9&is=69f71539&hm=7e21bda0a3f767d54507020675fddce0af1195647386f898edf141522ab296b1&" alt="NAZWA Logo">
+        <img src="logo.png" alt="NAZWA Logo">
         <h1>قوانين</h1>
         <p>NAZWA RP</p>
     </div>
@@ -170,7 +168,7 @@
             <summary>قوانين الشرطة</summary>
             <div class="content">
                 <strong>6. قوانين الأمن العام والنظام:</strong><br>
-                • المشاركة في تجمعات غير مرخصة ممنوعة.<br>
+                • المشاركة in تجمعات غير مرخصة ممنوعة.<br>
                 • الإساءة لرجال الأمن أو تعطيلهم جريمة.<br>
                 • أي سلوك يسبب فوضى عليه عقوبات.<br><br>
                 <strong>7. قوانين السلاح:</strong><br>

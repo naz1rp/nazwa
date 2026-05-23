@@ -33,7 +33,7 @@
             position: fixed;
             inset: 0;
             z-index: -1;
-            background: linear-gradient(rgba(5, 5, 5, 0.88), rgba(5, 5, 5, 0.96)), url('logo.png');
+            background: linear-gradient(rgba(5, 5, 5, 0.9), rgba(5, 5, 5, 0.97)), url('logo.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -106,7 +106,6 @@
             display: none;
         }
 
-        /* تم تصليح كود الأيقونات ليتوافق مع Font Awesome 6 لضمان اختفاء علامة الاستفهام */
         summary::after {
             content: "\f067";
             font-family: "Font Awesome 6 Free";
@@ -253,7 +252,7 @@
                 • احترام الجميع وعدم السب أو الإهانة.<br>
                 • الالتزام بالشخصية داخل الرول بلاي.<br>
                 • الخوف على الحياة (Fear RP).<br>
-                • في حال الوفاة (الدم الميت)، يجب الانتظار في المستشفى لمدة 5 دقائق، إلا في حال وجود شخص يقوم بنقلك أو إسعافك.<br>
+                • في حال الوفاة، يجب الانتظار في المستشفى لمدة 5 دقائق، إلا في حال وجود شخص يقوم بنقلك أو إسعافك.<br>
                 • يمنع التخريب أو إفساد متعة اللعب.
             </div>
         </details>
@@ -358,3 +357,5 @@
                             </a>
                         </li>
                         <li>
+                            <a href="https://www.instagram.com/nazwa_rp_1" target="_blank">
+             

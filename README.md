@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE
 <html lang="ar" dir="rtl">
 
 <head>
